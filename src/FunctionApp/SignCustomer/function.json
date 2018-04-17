@@ -1,0 +1,44 @@
+{
+  "bindings": [
+    {
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [
+        "post"
+      ],
+      "authLevel": "function"
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "res"
+    },
+    {
+      "type": "table",
+      "name": "customersTable",
+      "tableName": "customers",
+      "connection": "registrationstorage_STORAGE",
+      "direction": "out"
+    },
+    {
+      "type": "sendGrid",
+      "name": "emailMessage",
+      "apiKey": "sendGridApiKey",
+      "subject": "Welcome",
+      "from": "noreply@jankowskimichal.pl",
+      "text": "Thank you for registering!!!",
+      "direction": "out"
+    },
+    {
+      "type": "twilioSms",
+      "name": "smsMessage",
+      "accountSid": "twilioAccountSid",
+      "authToken": "twilioAuthToken",
+      "to": "!!!!!!!!!!!!!!!!!!!!!!!!!!!ENTER TO NUMBER!!!!!!!!!!!!!!!!!!!!!!!",
+      "from": "!!!!!!!!!!!!!!!!!!!!!!!!!!!ENTER FROM NUMBER!!!!!!!!!!!!!!!!!!!!!!!",
+      "direction": "out"
+    }
+  ],
+  "disabled": false
+}
